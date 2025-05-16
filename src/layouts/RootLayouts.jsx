@@ -5,9 +5,10 @@ import Linkedin from "/public/assets/icons/linkedin.svg";
 function RootLayout() {
   return (
     <>
+
       <nav
         style={{ backgroundColor: "#ffffff" }}
-        className="px-14 py-3 fixed top-0 left-0 right-0"
+        className="px-14 py-3 fixed top-0 left-0 right-0 z-50"
       >
         <div className="logo font-baloo text-heading-2 flex items-center gap-2">
           <img
@@ -17,6 +18,7 @@ function RootLayout() {
           />
           <h1 className="text-center pt-2">NusaKue</h1>
         </div>
+
         <ul className="nav-links font-poppins text-body-md-regular">
           {[
             { to: "/", label: "Beranda" },

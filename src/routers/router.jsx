@@ -5,27 +5,33 @@ import HomePage from "../pages/views/HomePage.jsx";
 import AboutPage from "../pages/views/AboutPage.jsx";
 import DetectPage from "../pages/views/DetectPage.jsx";
 import UmkmPage from "../pages/views/UmkmPage.jsx";
- 
+import ScrollToTop from "../components/ScrollOnTop";
+
 export const Router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />,
+    element: (
+      <>
+        <ScrollToTop />
+        <RootLayout />
+      </>
+    ),
     children: [
       {
         path: "/",
-        element: <HomePage/>,
+        element: <HomePage />,
       },
       {
         path: "/Deteksi-Kue",
-        element: <DetectPage/>,
+        element: <DetectPage />,
       },
       {
         path: "/Cari-UMKM",
-        element: <UmkmPage/>,
+        element: <UmkmPage />,
       },
       {
         path: "/Tentang-kami",
-        element: <AboutPage/>,
+        element: <AboutPage />,
       },
     ],
   },

@@ -37,6 +37,9 @@ const Technology = () => {
               icon={item.icon}
               name={item.name}
               desc={item.desc}
+              animateType="zoom-in"
+              animateOffset="100"
+              animateDuration="1000"
             />
           ))}
         </div>

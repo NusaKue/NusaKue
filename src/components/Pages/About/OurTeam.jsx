@@ -47,6 +47,9 @@ const OurTeam = () => {
               name={member.name}
               role={member.role}
               icon={member.icon}
+              animateType="flip-right"
+              animateOffset="100"
+              animateDuration="1000"
             />
           ))}
         </div>

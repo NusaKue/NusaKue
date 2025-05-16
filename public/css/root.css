@@ -1,0 +1,8 @@
+:root{
+  --color-primary-100: #9fbb73;
+  --accent-color-80: #659d7f;
+  --color-text-light: white;
+  --color-text-dark: #555;
+
+  --root-padding: 0 3rem 0 3rem;;
+}

@@ -5,7 +5,7 @@ import Linkedin from "../../public/assets/logo/LinkedinLogo.svg";
 function RootLayout() {
   return (
     <>
-      <nav style={{ backgroundColor: "#ffffff" }} className="px-14 py-3 fixed top-0 left-0 right-0">
+      <nav style={{ backgroundColor: "#ffffff" }} className="px-14 py-3 fixed top-0 left-0 right-0 z-50">
         <div className="logo font-baloo text-heading-2">NusaKue</div>
         <ul className="nav-links font-poppins text-body-md-regular">
           {[

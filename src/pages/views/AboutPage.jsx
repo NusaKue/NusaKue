@@ -1,9 +1,15 @@
+import AboutNusa from "../../components/Pages/About/AboutNusa";
+import OurMission from "../../components/Pages/About/OurMission";
+import OurTeam from "../../components/Pages/About/OurTeam";
+import Technology from "../../components/Pages/About/Technology";
+
 function AboutPage() {
   return (
     <>
-      <div>
-        <h1>Halaman Tetang Kami</h1>
-      </div>
+      <AboutNusa />
+      <OurMission />
+      <OurTeam />
+      <Technology />
     </>
   );
 }

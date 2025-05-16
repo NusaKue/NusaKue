@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "../public/assets/react.svg";
 import viteLogo from "/vite.svg";
 import { Router } from "./routers/router.jsx";
 import { RouterProvider } from "react-router-dom";

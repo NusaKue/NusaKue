@@ -35,15 +35,6 @@ nav {
   color: var(--accent-color-80);
 }
 
-/* .footer {
-  background-color: #9fbb73;
-  font-family: "Baloo 2", sans-serif;
-} */
-
-/* .footer p {
-  font-family: "Poppins", sans-serif;
-} */
-
 .wrap-section {
   display: flex;
   justify-content: space-between;

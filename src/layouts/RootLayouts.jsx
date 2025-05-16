@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "../../public/css/Layout.css";
-import Github from "../../public/assets/logo/GithubLogo.svg";
-import Linkedin from "../../public/assets/logo/LinkedinLogo.svg";
+import "/public/css/Layout.css";
+import Github from "/public/assets/icons/github.svg";
+import Linkedin from "/public/assets/icons/linkedin.svg";
 function RootLayout() {
   return (
     <>
@@ -27,7 +27,7 @@ function RootLayout() {
           ))}
         </ul>
       </nav>
-      <main className="px-14 bg-primary-20  pt-20">
+      <main className="px-14 bg-primary-20  pt-20 max-w-full">
       <Outlet />
       </main>
 

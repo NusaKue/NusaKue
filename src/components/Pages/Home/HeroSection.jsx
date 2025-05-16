@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <section className="hero grid grid-cols-12 py-5">
 
-      <div className="hero-content text-primary-100 col-span-6 flex gap-2 flex-col justify-center gap-6 ">
+      <div className="hero-content text-primary-100 col-span-6 flex flex-col justify-center gap-6 ">
         <h1 className="hero-title font-baloo text-6xl font-semibold">
           Kenali Kue Tradisional Indonesia Hanya Dengan Satu Foto
         </h1>
@@ -17,13 +17,13 @@ const HeroSection = () => {
           <Button
             text="Mulai Deteksi"
             className="bg-primary-100 text-white border border-primary-100"
-            icon="/assets/logo/camera.svg"
+            icon="/assets/icons/camera.svg"
             link={"/Deteksi-Kue"}
           />
           <Button
             text="Mulai Deteksi"
             className="bg-white text-primary-100 border border-primary-100"
-            icon="/assets/logo/market.svg"
+            icon="/assets/icons/market.svg"
           />
         </div>
       </div>

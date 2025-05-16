@@ -1,6 +1,6 @@
 const OurMission = () => {
   return (
-    <section className="our-mission bg-primary-100 py-24 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-14">
+    <section className="our-mission bg-primary-100 py-24 w-screen px-14">
       <div className="mission-content text-white pb-6">
         <h2 className="mission-title font-baloo text-heading-2 mb-4">
           Misi Kami

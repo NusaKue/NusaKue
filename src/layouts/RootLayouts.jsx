@@ -8,7 +8,7 @@ function RootLayout() {
 
       <nav
         style={{ backgroundColor: "#ffffff" }}
-        className="px-14 py-3 fixed top-0 left-0 right-0 z-50"
+        className="px-24 py-3 fixed top-0 left-0 right-0 z-50"
       >
         <div className="logo font-baloo text-heading-2 flex items-center gap-2">
           <img
@@ -39,15 +39,16 @@ function RootLayout() {
           ))}
         </ul>
       </nav>
-      <main className="bg-primary-20 pt-16">
+
+      <main className="bg-primary-20 pt-[64px]">
         <Outlet />
       </main>
 
-      <footer className="footer px-14 bg-primary-100">
+      <footer className="footer px-24 bg-primary-100">
         <div className="wrap-section py-5">
           <div className="footer-section">
             <h1 className="logo font-baloo text-display-3">NusaKue</h1>
-            <p className="font-poppins text-body-lg-regular">
+            <p className="font-poppins text-body-md-regular">
               Temukan dan lestarikan kekayaan <br /> kue tradisional Indonesia
               lewat <br /> teknologi
             </p>
@@ -69,8 +70,8 @@ function RootLayout() {
           </div>
           <div className="font-poppins footer-section">
             <h1 className="text-body-lg-medium">Hubungi Kami</h1>
-            <p className="text-body-lg-regular">Email: hello@nusakue.com</p>
-            <p className="text-body-lg-regular">
+            <p className="text-body-md-regular">Email: hello@nusakue.com</p>
+            <p className="text-body-md-regular">
               Nomor Handphone: +62 899-9999-9999
             </p>
           </div>

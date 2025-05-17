@@ -2,9 +2,9 @@ import Button from "../../Button";
 
 const HeroSection = () => {
   return (
-    <section className="hero grid grid-cols-12 pb-16 pt-12 px-14">
+    <section className="hero grid grid-cols-12 h-[calc(100vh-64px)] px-24 ">
 
-      <div className="hero-content text-primary-100 col-span-5 flex flex-col justify-center gap-6 ">
+      <div className="hero-content text-primary-100 col-span-5 flex flex-col justify-center gap-6 m-auto">
         <h1 className="hero-title font-baloo text-6xl font-semibold">
           Kenali Kue Tradisional Indonesia Hanya Dengan Satu Foto
         </h1>
@@ -29,9 +29,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="hero-image col-span-6 col-start-7 flex">
+      <div className="hero-image col-span-6 col-start-7 m-auto">
         <img
-          className="bg-cover w-full rounded-2xl"
+          className="bg-cover rounded-2xl "
           src="/assets/images/klepon.jpg"
           alt=""
         />

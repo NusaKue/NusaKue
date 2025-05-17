@@ -25,24 +25,24 @@ const Technology = () => {
   ];
 
   return (
-    <section className="technology bg-white py-24 w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-14">
+    <section className="technology bg-white py-24 w-screen px-24 grid grid-rows-2">
       <div className="technology-content text-primary-100">
-        <h2 className="technology-title font-baloo text-center text-heading-2 mb-10">
+        <h2 className="technology-title font-baloo text-center text-heading-1 mb-10">
           Teknologi yang Kami Gunakan
         </h2>
-        <div className="techonolgy-content grid grid-cols-12 gap-5">
-          {technologyItems.map((item) => (
-            <TechnologyItem
-              className=" col-span-3"
-              icon={item.icon}
-              name={item.name}
-              desc={item.desc}
-              animateType="zoom-in"
-              animateOffset="100"
-              animateDuration="1000"
-            />
-          ))}
-        </div>
+      </div>
+      <div className="techonolgy-content grid grid-cols-12 gap-5">
+        {technologyItems.map((item) => (
+          <TechnologyItem
+            className="col-span-3"
+            icon={item.icon}
+            name={item.name}
+            desc={item.desc}
+            animateType="zoom-in"
+            animateOffset="100"
+            animateDuration="1000"
+          />
+        ))}
       </div>
     </section>
   );

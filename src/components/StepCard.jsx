@@ -1,6 +1,6 @@
 const StepCard = ({ icon, title, desc, animateType, animateOffset, animateDuration}) => {
   return (
-    <div className="step-1 grid grid-row-2 pb-16 gap-5" data-aos={animateType} data-aos-offset={animateOffset} data-aos-duration={animateDuration}>
+    <div className="step-1 grid gap-5" data-aos={animateType} data-aos-offset={animateOffset} data-aos-duration={animateDuration}>
       <div className="step-img flex justify-center">
         <img
           src={icon}

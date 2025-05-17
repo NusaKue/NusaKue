@@ -3,9 +3,9 @@ import "aos/dist/aos.css"
 
 const HowItWorks = () => {
   return (
-    <section className="how-it-works bg-primary-100 px-64 grid grid-cols-3 grid-rows-[auto_1fr]">
-      <div className="header col-span-3 text-center">
-        <h1 className="text-heading-2 text-white py-14 font-baloo" data-aos="fade-down">
+    <section className="how-it-works bg-primary-100 px-64 grid grid-cols-3 grid-rows-[auto_1fr] py-16">
+      <div className="header col-span-3">
+        <h1 className="text-heading-2 text-white font-baloo text-center pb-10" data-aos="fade-down" data-aos-duration="1000">
           Bagaimana Cara Kerjanya
         </h1>
       </div>

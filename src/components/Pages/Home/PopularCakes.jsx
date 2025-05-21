@@ -2,8 +2,9 @@ import PopularCakesCard from "../../PopularCakesCard";
 
 const PoularCakes = () => {
   return (
-    <section className="px-24 popular-cakes grid grid-rows-[auto_1fr] grid-cols-4 justify-items-center gap-5 py-16">
-      <div className="header col-span-4 text-center text-heading-2 text-primary-100 font-baloo pb-6">
+    <section className="popular-cakes py-10 grid md:grid-rows-[auto_1fr] justify-items-center gap-5 md:px-36 md:gap-6 md:grid-cols-4 px-6">
+      
+      <div className="header font-baloo text-primary-100 text-center text-heading-2 col-span-1 md:col-span-4">
         <h1 data-aos="fade-down" data-aos-duration="1000" className="pb-6">
           Kue Tradisional Terpopuler
         </h1>

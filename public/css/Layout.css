@@ -1,14 +1,12 @@
-@import url("root.css");
+/* @import url("root.css");
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* font-family: "Baloo 2", sans-serif; */
 }
 
 .logo {
-  /* font-size: 1.75rem; */
   color: #9fbb73;
 }
 
@@ -22,7 +20,6 @@ nav {
 
 .navlink {
   text-decoration: none; 
-  /* color: #555; */
   transition: color 0.2s;
   color: #9fbb73;
 }
@@ -79,4 +76,4 @@ nav {
   text-align: center;
   font-size: 1rem;
   color: white;
-}
+} */

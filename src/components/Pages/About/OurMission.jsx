@@ -3,7 +3,7 @@ const OurMission = () => {
   return (
     <section className="our-mission bg-primary-100 px-24 grid grid-rows-2 grid-cols-2 py-16">
       <div className="mission-content text-white pb-12 col-span-2">
-        <h2 className="mission-title font-baloo text-heading-1 pb-5 text-center">
+        <h2 className="mission-title font-baloo text-heading-1 py-7 text-center">
           Misi Kami
         </h2>
         <p className="font-poppins text-body-md-regular text-center">

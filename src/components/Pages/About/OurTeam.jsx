@@ -1,19 +1,17 @@
 import TeamProfile from "../../TeamProfile";
 
-const OurTeam = ({members}) => {
- 
+const OurTeam = ({ members }) => {
   return (
-    <section className="our-team py-16 px-24 grid grid-cols-12 grid-rows-[auto_1fr]">
-      <div className="team-content text-primary-100 col-span-12">
-        <h2 className="team-title font-baloo text-heading-1 text-center mb-10">
+    <section className="our-team px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-16">
+      <div className="team-content text-primary-100 text-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+        <h2 className="team-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2">
           Tim Kami
         </h2>
       </div>
 
-      <div className="team-content col-span-12 grid grid-cols-3 gap-8 col-start-2">
+      <div className="team-content col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto justify-items-center">
         {Object.values(members).map((member) => (
           <TeamProfile
-            className="flex flex-col items-center  w-80 h-auto py-4 rounded-xl"
             name={member.name}
             role={member.role}
             icon={member.icon}
@@ -23,7 +21,6 @@ const OurTeam = ({members}) => {
           />
         ))}
       </div>
-      
     </section>
   );
 };

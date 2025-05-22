@@ -1,14 +1,26 @@
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "../../Button";
 
 const HeroSection = () => {
   return (
-    <section className="hero grid h-fit gap-10 md:gap-0 my-8 md:my-0 md:mt-0 md:h-[calc(100vh-64px)] grid-cols-4 px-6 md:grid-cols-12 md:px-36">
-    
-      <div className="hero-container h-fit md:h-screen col-span-4 grid md:col-span-5 ">
-        <div className="hero-content h-fit md:h-screen font-baloo flex flex-col gap-6 text-primary-100 md:justify-center md:gap-10">
-          <h1 className="hero-title text-heading-2 md:text-6xl ">
-            Kenali Kue Tradisional Indonesia Hanya Dengan Satu Foto
-          </h1>
+    <section className="hero grid h-fit gap-10 md:gap-0 my-8 md:my-0 md:mt-16 md:min-h-[calc(100vh-64px)] grid-cols-4 px-6 md:grid-cols-12 md:px-36">
+      <div className="hero-container h-fit md:min-h-[calc(100vh-64px)] col-span-4 grid md:col-span-6 ">
+        <div className="hero-content h-fit md:min-h-[calc(100vh-64px)] font-baloo flex flex-col gap-6 text-primary-100 md:justify-center md:gap-10">
+          <AnimatePresence>
+            <motion.div
+              // key={location.pathname}
+              // initial={{ opacity: 0, scale: 0 }}
+              // animate={{ opacity: 1, scale: 1 }}
+              // transition={{
+              //   duration: 0.4,
+              //   scale: { type: "spring", visualDuration: 0.4, bounce: 0.1 },
+              // }}
+            >
+              <h1 className="hero-title text-heading-2 md:text-6xl ">
+                Kenali Kue Tradisional Indonesia Hanya Dengan Satu Foto
+              </h1>
+            </motion.div>
+          </AnimatePresence>
 
           <p className="font-poppins text-body-sm-regular md:text-body-xl-regular ">
             Situs web ini membantu pengguna mengenali kue tradisional Indonesia

@@ -1,6 +1,6 @@
 const AboutNusa = () => {
   return (
-    <section className="about-nusa px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-16">
+    <section className="about-nusa px-6 sm:px-8 md:px-12 lg:px-24 md:mt-16 py-8 sm:py-10 md:py-14 lg:py-16">
       <div className="about-header text-primary-100">
         <h1 className="about-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-4 sm:pb-5 md:pb-6 lg:pb-7">
           Tentang Kami

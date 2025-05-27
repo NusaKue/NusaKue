@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, animate } from "framer-motion";
 import { useLocation, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
   const menuVariants = {
     hidden: { opacity: 0, y: -15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-    exit: { opacity: 0, y: -15, transition: { duration: 1 } },
+    exit: { opacity: 0, y: -15, transition: { duration: 0.3 } },
   };
 
   useEffect(() => {
@@ -38,10 +38,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav
-      style={{ backgroundColor: "#ffffff" }}
-      className="px-6 md:px-24 py-4 fixed top-0 left-0 right-0 z-50 grid grid-cols-2  text-primary-100"
-    >
+    <nav className="px-6 md:px-24 py-4 fixed top-0 left-0 right-0 z-50 grid grid-cols-2  text-primary-100 bg-white ">
       <div className="text-heading-4 sm:text-heading-2 logo font-baloo  flex items-center gap-2">
         <img
           src="/public/assets/icons/logo.svg"
@@ -82,7 +79,7 @@ const Navbar = () => {
         </svg>
       </button>
 
-      <ul className="nav-links hidden font-poppins text-body-md-regular items-center space-x-8 justify-end lg:flex">
+      <ul className="nav-links text-body-sm-regular lg:flex lg:text-body-sm-regular xl:text-body-md-regular hidden font-poppins items-center space-x-8 justify-end ">
         {[
           { to: "/", label: "Beranda" },
           { to: "/Deteksi-Kue", label: "Deteksi Kue" },
@@ -93,7 +90,9 @@ const Navbar = () => {
             <NavLink
               to={to}
               className={({ isActive }) =>
-                isActive ? "navlink active" : "navlink"
+                isActive
+                  ? "scale-110 text-success-80 transition-transform ease-in"
+                  : "hover:text-success-80 transition-all ease-in"
               }
               onClick={() => setIsOpen(false)}
             >
@@ -103,8 +102,8 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {isOpen && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {isOpen && (
           <motion.ul
             ref={menuRef}
             initial="hidden"
@@ -123,7 +122,9 @@ const Navbar = () => {
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    isActive ? "navlink active" : "navlink"
+                    isActive
+                      ? "scale-110 text-success-80 transition-transform ease-in"
+                      : "hover:text-success-80 transition-all ease-in"
                   }
                   onClick={() => setIsOpen(false)}
                 >
@@ -132,8 +133,8 @@ const Navbar = () => {
               </li>
             ))}
           </motion.ul>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

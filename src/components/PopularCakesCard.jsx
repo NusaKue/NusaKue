@@ -1,11 +1,11 @@
-const PopularCakesCard = ({animateType, animateOffset, animateDuration}) => {
+const PopularCakesCard = ({animateType, animateOffset, animateDuration,image}) => {
   return (
     <div className="card cake-list flex justify-center items-center flex-col bg-white rounded-lg shadow-md max-w-sm" data-aos={animateType} data-aos-offset={animateOffset} data-aos-duration={animateDuration}>
-      <div className="image w-full overflow-hidden rounded-t-lg">
+      <div className="overflow-hidden rounded-t-lg">
         <img
-          src="/public/assets/images/klepon.jpg"
+          src={image}
           alt="Klepon"
-          className="w-full h-56 object-cover"
+          className="w-full  bg-cover object-cover"
         />
       </div>
       <div className="content px-4 py-4 text-primary-100 ">

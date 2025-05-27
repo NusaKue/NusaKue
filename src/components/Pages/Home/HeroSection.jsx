@@ -3,9 +3,9 @@ import Button from "../../Button";
 
 const HeroSection = () => {
   return (
-    <section className="hero grid h-fit gap-10 md:gap-0 my-8 md:my-0 md:mt-16 md:min-h-[calc(100vh-64px)] grid-cols-4 px-6 md:grid-cols-12 md:px-36">
-      <div className="hero-container h-fit md:min-h-[calc(100vh-64px)] col-span-4 grid md:col-span-6 ">
-        <div className="hero-content h-fit md:min-h-[calc(100vh-64px)] font-baloo flex flex-col gap-6 text-primary-100 md:justify-center md:gap-10">
+    <section className="hero grid min-h-[calc(100vh-64px)] gap-10 my-8 lg:gap-0 md:px-36 lg:my-0 lg:mt-16 lg:min-h-[calc(100vh-64px)] grid-cols-4 px-6 lg:grid-cols-12 ">
+      <div className="hero-container h-fit lg:min-h-[calc(100vh-64px)] col-span-4 grid lg:col-span-6 ">
+        <div className="hero-content h-fit lg:min-h-[calc(100vh-64px)] font-baloo flex flex-col gap-6 text-primary-100 lg:justify-center lg:gap-10">
           <AnimatePresence>
             <motion.div
               // key={location.pathname}
@@ -27,7 +27,7 @@ const HeroSection = () => {
             menggunakan AI dan menyarankan usaha kecil (UMKM) yang menjualnya.
           </p>
 
-          <div className="hero-button flex flex-col align-items gap-4 md:flex-row sm:flex-row">
+          <div className="hero-button flex  flex-col align-items gap-4 md:flex-row sm:flex-row ">
             <Button
               text="Mulai Deteksi"
               className="bg-primary-100 text-white border border-primary-100 w-full sm:w-auto"
@@ -44,10 +44,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="hero-image order-first col-span-4 col-start-1 md:order-none md:col-span-6 md:col-start-8 md:m-auto">
+      <div className="hero-image order-first col-span-4 col-start-1 lg:order-none lg:col-span-6 lg:col-start-8 lg:m-auto">
         <img
-          className="w-auto h-full bg-cover object-cover rounded-2xl md:h-auto md:m-auto"
-          src="/assets/images/klepon.jpg"
+          className="w-full h-full bg-cover object-cover rounded-2xl md:h-auto md:m-auto"
+          src="/assets/images/cover1.jpg"
           alt="Kue Klepon"
         />
       </div>

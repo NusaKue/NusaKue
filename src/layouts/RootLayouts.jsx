@@ -7,7 +7,7 @@ function RootLayout() {
   return (
     <>
       <Navbar />
-      <main className="bg-primary-20 pt-16 md:pt-0">
+      <main className="bg-primary-20 pt-16 lg:pt-0">
         <Outlet />
       </main>
     <Footer />

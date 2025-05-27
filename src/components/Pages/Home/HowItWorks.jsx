@@ -11,7 +11,7 @@ const HowItWorks = () => {
         </h1>
       </div>
 
-      <div className="grid col-span-3 gap-10 sm:col-span-3 md:grid-cols-3 md:col-start-1 md:justify-items-center">
+      <div className="grid col-span-3 gap-10 sm:col-span-3 md:grid-cols-1 lg:grid-cols-3 md:col-start-1 md:justify-items-center">
         <StepCard
           icon="/public/assets/icons/camera40x40.svg"
           title="Ambil Gambar"

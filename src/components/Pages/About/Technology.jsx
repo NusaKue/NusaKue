@@ -25,7 +25,7 @@ const Technology = () => {
   ];
 
   return (
-    <section className="technology bg-white px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-24 w-screen">
+    <section className="technology bg-white px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-24 ">
       <div className="technology-content text-primary-100">
         <h2 className="technology-title font-baloo text-center text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           Teknologi yang Kami Gunakan

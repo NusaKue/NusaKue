@@ -1,9 +1,9 @@
+import FindUMKM from "../../components/Pages/UMKM/FindUMKM";
+
 function UmkmPage() {
   return (
     <>
-      <div>
-        <h1>Halaman cari umkm</h1>
-      </div>
+      <FindUMKM />
     </>
   );
 }

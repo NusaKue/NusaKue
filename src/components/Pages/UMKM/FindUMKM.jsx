@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SearchBar from "../../SearchBar";
 import DropDown from "../../DropDown";
+import UMKMCard from "../../UMKMCard";
+import umkmList from "../../../models/umkmList";
 
 const FindUMKM = () => {
   const [query, setQuery] = useState("");
@@ -33,7 +35,7 @@ const FindUMKM = () => {
   return (
     <section className="find-umkm px-6 sm:px-8 md:px-12 lg:px-24 mt-3 md:mt-4 lg:mt-16 py-8 sm:py-10 md:py-14 lg:py-16">
       <div className="umkm-header text-primary-100 lg:mx-20">
-        <h1 className="umkm-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-7 sm:pb-8 md:pb-9 lg:pb-10">
+        <h1 className="umkm-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-5 sm:pb-6 md:pb-8 lg:pb-10">
           Jelajahi Kue Tradisional dari Beberapa Daerah Pilihan!
         </h1>
       </div>
@@ -51,6 +53,11 @@ const FindUMKM = () => {
         selected={selectedRegion}
         onSelect={handleSelectRegion}
       ></DropDown>
+      <div className="flex flex-wrap gap-6 justify-start lg:justify-center">
+        {umkmList.map((umkm, index) => (
+          <UMKMCard key={index} {...umkm} />
+        ))}
+      </div>
     </section>
   );
 };

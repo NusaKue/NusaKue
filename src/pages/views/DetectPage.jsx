@@ -1,9 +1,9 @@
+import CameraSection from "../../components/Pages/Detect/CameraSection";
+
 function DetectPage() {
   return (
     <>
-      <div>
-        <h1>Halaman Deteksi</h1>
-      </div>
+      <CameraSection/>
     </>
   );
 }

@@ -39,6 +39,7 @@ const HeroSection = () => {
               text="Cari UMKM"
               className="bg-white text-primary-100 border border-primary-100 w-full sm:w-auto"
               icon="/assets/icons/market.svg"
+              link={"/Cari-UMKM"}
             />
           </div>
         </div>

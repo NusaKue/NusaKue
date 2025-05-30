@@ -21,7 +21,7 @@ const HowItWorks = () => {
           animateDuration="1000"
         />
         <StepCard
-          icon="/public/assets/icons/detect.svg"
+          icon="/public/assets/icons/detect40x40.svg"
           title="Deteksi AI"
           desc="Kami akan mengidentifikasi kue dan memberikan informasi secara rinci"
           animateType="fade-up"

@@ -1,6 +1,6 @@
 import FindUMKM from "../../components/Pages/UMKM/FindUMKM";
-
 function UmkmPage() {
+
   return (
     <>
       <FindUMKM />

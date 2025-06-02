@@ -1,28 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBar from "../../SearchBar";
 import DropDown from "../../DropDown";
 import UMKMCard from "../../UMKMCard";
-import umkmList from "../../../models/umkmList";
+import { useApi } from "../../../hooks/useApi";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const FindUMKM = () => {
+  const { result, loading, error, refetch } = useApi(
+    "umkms",
+    "GET",
+    null,
+    null,
+    null,
+    true
+  );
+  const data = result?.data;
+  const [filteredData, setFilteredData] = useState(data);
   const [query, setQuery] = useState("");
-  const [selectedRegion, setSelectedRegion] = useState("");
+
+  useEffect(() => {
+    if (!loading && data) {
+      setFilteredData(data);
+    }
+  }, [loading, data]);
 
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      console.log(query);
-      setQuery("");
+  useEffect(() => {
+    if (data) {
+      if (query.trim() === "") {
+        setFilteredData(data);
+      } else {
+        const lowerQuery = query.toLowerCase();
+        const filtered = data.filter((item) =>
+          item.nama.toLowerCase().includes(lowerQuery)
+        );
+        setFilteredData(filtered);
+      }
     }
-  };
-
-  const handleSelectRegion = (region) => {
-    console.log(region);
-    setSelectedRegion(region);
-  };
+  }, [query, data]);
 
   const regionOptions = [
     "Jawa Barat",
@@ -31,6 +49,14 @@ const FindUMKM = () => {
     "Kalimantan Barat",
     "Bengkulu",
   ];
+
+  if (error) {
+    return (
+      <p className="text-center text-red-600 font-poppins mt-10">
+        Terjadi kesalahan: {error.message}
+      </p>
+    );
+  }
 
   return (
     <section className="find-umkm px-6 sm:px-8 md:px-12 lg:px-24 mt-3 md:mt-4 lg:mt-16 py-8 sm:py-10 md:py-14 lg:py-16">
@@ -44,19 +70,54 @@ const FindUMKM = () => {
         placeholder="Cari"
         value={query}
         onChange={handleSearchChange}
-        onKeyDown={handleKeyDown}
-      ></SearchBar>
-      <DropDown
+      />
+      {/* <DropDown
         label="Filter Berdasarkan Lokasi"
         icon="/assets/icons/down.svg"
         options={regionOptions}
         selected={selectedRegion}
         onSelect={handleSelectRegion}
-      ></DropDown>
-      <div className="flex flex-wrap gap-6 justify-start lg:justify-center">
-        {umkmList.map((umkm, index) => (
-          <UMKMCard key={index} {...umkm} />
-        ))}
+      /> */}
+      <div className="grid grid-cols-4 px-6">
+        {loading || !data ? (
+          <div className="col-span-4 flex justify-center items-center py-6">
+            {/* Loading spinner di atas */}
+            <DotLottieReact
+              src="https://lottie.host/674c6c90-9815-4c01-a8fe-a809d2373d1a/VcJBJZNT0a.lottie"
+              autoplay
+              loop
+              style={{ width: 400, height: 400 }}
+            />
+          </div>
+        ) : (
+          <>
+            <div className="col-span-4 py-6">
+              <h1 className="umkm-title font-baloo text-heading-1 text-center text-primary-100">
+                Daftar UMKM
+              </h1>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 col-span-4">
+              {filteredData?.length > 0 ? (
+                filteredData.map((item) => (
+                  <UMKMCard
+                    key={item.id}
+                    imgPosition="bottom"
+                    image_url={item.image_url}
+                    nama={item.nama}
+                    alamat={item.alamat}
+                    no_telp={item.no_telp}
+                    paling_diminati={item.paling_diminati}
+                  />
+                ))
+              ) : (
+                <p className="col-span-4 text-center text-primary-100 font-poppins text-lg">
+                  Tidak ada UMKM yang cocok dengan pencarianmu.
+                </p>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

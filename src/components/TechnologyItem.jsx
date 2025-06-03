@@ -14,8 +14,8 @@ const TechnologyItem = ({
       data-aos-offset={animateOffset}
       data-aos-duration={animateDuration}
     >
-      <div className="bg-primary-20 rounded-xl p-4 w-full justify-items-center">
-        <img src={icon} className="mb-4" alt="" />
+      <div className="bg-primary-20 rounded-xl p-4 min-h-full flex flex-col items-center text-center">
+        <img src={icon} className="mb-4 w-10 sm:w-12 md:w-14 lg:w-16" alt="" />
         <p className="font-poppins text-body-lg-medium lg:text-body-xl-medium mb-1 text-primary-100">
           {name}
         </p>

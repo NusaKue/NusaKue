@@ -1,33 +1,33 @@
 const teamMembers = [
   {
-    name: "Nama 1",
+    name: "Ady Subagya Junior",
+    role: "Machine Learning",
+    icon: "/assets/images/teamprofile/Ady Subagya Junior.jpeg",
+  },
+  {
+    name: "Bagus Dzakiy Rahman Saputra",
     role: "Machine Learning",
     icon: "/assets/images/kucheng.png",
   },
   {
-    name: "Nama 2",
+    name: "Fiyanda Ma'muri",
     role: "Machine Learning",
     icon: "/assets/images/kucheng.png",
   },
   {
-    name: "Nama 3",
-    role: "Machine Learning",
+    name: "Revaldo Relinsyah",
+    role: "Back-End Developer",
     icon: "/assets/images/kucheng.png",
   },
   {
-    name: "Nama 4",
-    role: "Back-End",
+    name: "Muhammad Irfan",
+    role: "Front-End Developer",
     icon: "/assets/images/kucheng.png",
   },
   {
-    name: "Nama 5",
-    role: "Front-End",
-    icon: "/assets/images/kucheng.png",
-  },
-  {
-    name: "Nama 6",
-    role: "Front-End",
-    icon: "/assets/images/kucheng.png",
+    name: "Sylvia Steffi",
+    role: "Front-End Developer",
+    icon: "/assets/images/teamprofile/Sylvia Steffi.jpg",
   },
 ];
 

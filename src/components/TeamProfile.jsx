@@ -13,12 +13,14 @@ const TeamProfile = ({
       data-aos-offset={animateOffset}
       data-aos-duration={animateDuration}
     >
-      <img
-        src={icon}
-        className="w-24 h-24 sm:w-44 sm:h-44 lg:w-60 lg:h-60"
-        alt={name}
-      />
-      <div className="w-full lg:w-fit">
+      <div className="w-24 sm:w-44 lg:w-60 aspect-square rounded-full overflow-hidden flex-shrink-0">
+        <img
+          src={icon}
+          className="w-full h-full object-cover object-center"
+          alt={name}
+        />
+      </div>
+      <div className="w-full lg:w-fit text-left lg:text-center">
         <p className="font-poppins text-body-lg-medium lg:text-body-xl-medium mb-1 text-primary-100">
           {name}
         </p>

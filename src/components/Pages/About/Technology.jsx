@@ -3,24 +3,59 @@ import TechnologyItem from "../../TechnologyItem";
 const Technology = () => {
   const technologyItems = [
     {
-      icon: "/assets/logo/love.svg",
-      name: "Test",
-      desc: "...",
+      icon: "/assets/icons/technology/tensorflow.png",
+      name: "TensorFlow",
+      desc: "Untuk melatih model yang mampu mengenali gambar kue tradisional.",
     },
     {
-      icon: "/assets/logo/love.svg",
-      name: "Test",
-      desc: "...",
+      icon: "/assets/icons/technology/googlecolab.png",
+      name: "Google Colab",
+      desc: "Digunakan sebagai lingkungan pelatihan model berbasis cloud.",
     },
     {
-      icon: "/assets/logo/love.svg",
-      name: "Test",
-      desc: "...",
+      icon: "/assets/icons/technology/flask.png",
+      name: "Flask",
+      desc: "Untuk menyajikan model ML dalam bentuk REST API.",
     },
     {
-      icon: "/assets/logo/love.svg",
-      name: "Test",
-      desc: "...",
+      icon: "/assets/icons/technology/hapi.png",
+      name: "Hapi JS",
+      desc: "Digunakan untuk membuat REST API tambahan di sisi back-end.",
+    },
+    {
+      icon: "/assets/icons/technology/firebase.png",
+      name: "Firebase",
+      desc: "Menyimpan dan mengelola data aplikasi secara real-time.",
+    },
+    {
+      icon: "/assets/icons/technology/cloudrun.png",
+      name: "Cloud Run",
+      desc: "Menjalankan API secara otomatis tanpa perlu server manual.",
+    },
+    {
+      icon: "/assets/icons/technology/cloudstorage.png",
+      name: "Cloud Storage",
+      desc: "Menyimpan gambar kue yang diunggah pengguna.",
+    },
+    {
+      icon: "/assets/icons/technology/react.png",
+      name: "React JS",
+      desc: "Membangun antarmuka pengguna yang interaktif.",
+    },
+    {
+      icon: "/assets/icons/technology/tailwind.png",
+      name: "Tailwind CSS",
+      desc: "Styling cepat dan responsif untuk tampilan web.",
+    },
+    {
+      icon: "/assets/icons/technology/vite.png",
+      name: "Vite",
+      desc: "Mempercepat proses pengembangan front-end berbasis React.",
+    },
+    {
+      icon: "/assets/icons/technology/figma.png",
+      name: "Figma",
+      desc: "Digunakan untuk mendesain antarmuka sebelum dikembangkan.",
     },
   ];
 
@@ -31,7 +66,7 @@ const Technology = () => {
           Teknologi yang Kami Gunakan
         </h2>
       </div>
-      <div className="techonolgy-content grid grid-cols-6 lg:grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
+      <div className="techonolgy-content grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-12 gap-2 sm:gap-3 md:gap-4 lg:gap-5">
         {technologyItems.map((item) => (
           <TechnologyItem
             className="col-span-3"

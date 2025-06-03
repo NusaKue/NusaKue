@@ -53,23 +53,36 @@ const Recomendation = ({ id }) => {
   console.log(data);
 
   return (
-    <section className="card grid grid-cols-1 md:grid-cols-3 gap-4 bg-primary-20 p-4 rounded-lg md:px-32 text-primary-100">
-      <div className="header md:col-span-3">
-        <h1 className="text-primary-600 font-semibold mb-2 font-baloo text-heading-1">
+    <section
+      className={`card grid grid-cols-1 md:grid-cols-5 gap-4 bg-primary-20 p-4 rounded-lg md:px-32 text-primary-100`}
+    >
+      <div
+        className={`header ${
+          data.length === 2 ? "md:col-span-5" : "md:col-span-3"
+        }`}
+      >
+        <h1 className="text-primary-600 font-semibold mb-2 font-baloo text-heading-1 text-center">
           Beli Dimana ya?
         </h1>
       </div>
 
-      <div className="flex flex-wrap md:flex-nowrap md:col-span-3 gap-4 md:gap-10">
-        {data.slice(0, 3).map((data) => (
+      <div
+        className={`flex flex-wrap md:flex-nowrap ${
+          data.length < 3 ? "justify-center md:col-span-5" : "md:col-span-5"
+        } gap-4 md:gap-10 max-w-full mx-auto`}
+      >
+        {data.slice(0, 3).map((item) => (
           <UMKMCard
-            key={data.id}
+            key={item.id}
             imgPosition="bottom"
-            image_url={data.image_url}
-            nama={data.nama}
-            alamat={data.alamat}
-            no_telp={data.no_telp}
-            paling_diminati={data.paling_diminati}
+            image_url={item.image_url}
+            nama={item.nama}
+            alamat={item.alamat}
+            no_telp={item.no_telp}
+            paling_diminati={item.paling_diminati}
+            animateType="fade-up"
+            animateOffset="10"
+            animateDuration="1000"
           />
         ))}
       </div>

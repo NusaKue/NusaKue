@@ -3,8 +3,14 @@ import { useApi } from "../../../hooks/useApi";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Button from "../../Button";
 
+const SkeletonImage = () => (
+  <div className="w-full h-40 bg-gray-300 animate-pulse rounded-t-lg"></div>
+);
+
 const ResultPredict = ({ imageData, setIdData, setLoading }) => {
   const [isIdDataSent, setIsIdDataSent] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const { result, loading, error, refetch } = useApi(
     "predict",
     "POST",
@@ -66,15 +72,27 @@ const ResultPredict = ({ imageData, setIdData, setLoading }) => {
   if (!result) return null;
   const data = result.data;
 
+  const imgElement = (
+    <img
+      src={data.image_url || "/assets/images/placeholder-image.jpg"}
+      alt={data.nama || "image"}
+      className={`w-full md:w-36 md:h-36 bg-cover object-cover rounded-lg`}
+      onLoad={() => setImageLoaded(true)}
+      onError={() => setImageLoaded(true)} // supaya skeleton hilang juga saat error gambar
+    />
+  );
+
   return (
-    <section className="result-predict grid-cols-4 font-poppins grid md:grid-cols-11 bg-primary-20 p-4 rounded-lg">
+    <section
+      className="result-predict grid-cols-4 font-poppins grid md:grid-cols-11 bg-primary-20 p-4 rounded-lg"
+      data-aos="fade-right"
+      data-aos-offset="10"
+      data-aos-duration="1000"
+    >
       <div className="card bg-white col-span-4 flex flex-col md:col-span-5 md:col-start-4 md:flex-row rounded-lg shadow-md">
         <div className="card-image my-auto p-4 flex justify-center">
-          <img
-            src={data.image_url}
-            alt="Klepon"
-            className="w-full md:w-36 md:h-36 bg-cover object-cover rounded-lg"
-          />
+          {loading ? <SkeletonImage /> : null}
+          <div className="overflow-hidden">{imgElement}</div>
         </div>
 
         <div className="card-body p-4 flex flex-col justify-center gap-2">
@@ -85,7 +103,6 @@ const ResultPredict = ({ imageData, setIdData, setLoading }) => {
             <span className="text-primary-100 flex-shrink-0 border rounded-full text-center text-body-md-medium px-4 py-1 min-w-[90px] inline-flex items-center justify-center">
               Cocok {data.skor}
             </span>
-
           </div>
           <h2 className="text-primary-100 font-semibold">
             Asal: {data.asal.map((item) => item + ", ")}
@@ -98,7 +115,7 @@ const ResultPredict = ({ imageData, setIdData, setLoading }) => {
           <div className="inline md:block">
             <Button
               text="Lihat Detail"
-              //   icon="/assets/icons/reset.svg"
+              icon="/assets/icons/detail.svg"
               link={`/Deteksi-Kue/${data.id_kue}`}
               className="bg-primary-100 text-white w-full md:w-auto"
             />

@@ -19,26 +19,15 @@ function DetailPage() {
   const data = result?.data;
   console.log(data?.id);
 
-  // if (loading || !result) {
-  //   return (
-  //     <div className="loading-overlay fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-  //       <DotLottieReact
-  //         src="https://lottie.host/674c6c90-9815-4c01-a8fe-a809d2373d1a/VcJBJZNT0a.lottie"
-  //         autoplay
-  //         loop
-  //         style={{ width: 300, height: 300 }}
-  //       />
-  //     </div>
-  //   );
-  // }
   return (
     <>
-      <ProductDetailHeaderSection data={data} />
+      <ProductDetailHeaderSection data={data} error={error}/>
       <PreparationAndCulturalSignificanceSection
         cara_pembuatan={data?.cara_pembuatan}
         budaya={data?.budaya}
+        error={error}
       />
-      <UmkmSellerListSection id={data?.id}/>
+      <UmkmSellerListSection id={data?.id} error={error}/>
     </>
   );
 }

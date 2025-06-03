@@ -47,7 +47,7 @@ const HeroSection = () => {
 
       <div className="hero-image order-first col-span-4 col-start-1 lg:order-none lg:col-span-6 lg:col-start-8 lg:m-auto">
         <img
-          className="w-full h-full bg-cover object-cover rounded-2xl md:h-auto md:m-auto"
+          className="w-full h-full bg-cover object-cover rounded-2xl md:h-auto md:m-auto shadow-xl"
           src="/assets/images/cover1.jpg"
           alt="Kue Klepon"
         />

@@ -1,31 +1,25 @@
-
-const ProductDetailHeaderSection = ({ data }) => {
+const ProductDetailHeaderSection = ({ data, error }) => {
+  if (error) {
+    return alert("error");
+  }
   if (!data) {
-    // Skeleton Loading UI
     return (
       <div className="grid grid-cols-12 h-screen lg:pt-32 lg:pb-8 gap-10">
-        {/* Skeleton gambar */}
         <div className="col-span-5 col-start-2 flex justify-center items-center h-full">
           <div className="w-11/12 h-3/4 bg-gray-300 rounded-lg animate-pulse" />
         </div>
 
-        {/* Skeleton teks */}
         <div className="col-span-5 col-start-7 text-primary-100 space-y-4 flex flex-col justify-center h-full">
-          {/* Skeleton judul */}
           <div className="h-10 bg-gray-300 rounded w-3/4 animate-pulse" />
 
-          {/* Skeleton asal */}
           <div className="h-5 bg-gray-300 rounded w-1/2 animate-pulse" />
 
-          {/* Skeleton deskripsi */}
           <div className="h-4 bg-gray-300 rounded w-full animate-pulse" />
           <div className="h-4 bg-gray-300 rounded w-5/6 animate-pulse" />
           <div className="h-4 bg-gray-300 rounded w-4/6 animate-pulse" />
 
-          {/* Skeleton subjudul bahan-bahan */}
           <div className="h-7 bg-gray-300 rounded w-1/3 animate-pulse mt-6" />
 
-          {/* Skeleton list bahan */}
           <ul className="list-disc list-inside space-y-2">
             {[...Array(5)].map((_, i) => (
               <li

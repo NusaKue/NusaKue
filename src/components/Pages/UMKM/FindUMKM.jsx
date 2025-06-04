@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import SearchBar from "../../SearchBar";
-import DropDown from "../../DropDown";
 import UMKMCard from "../../UMKMCard";
 import { useApi } from "../../../hooks/useApi";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Masonry from "react-masonry-css";
 
 const FindUMKM = () => {
   const { result, loading, error, refetch } = useApi(
@@ -17,6 +17,14 @@ const FindUMKM = () => {
   const data = result?.data;
   const [filteredData, setFilteredData] = useState(data);
   const [query, setQuery] = useState("");
+
+  // Konfigurasi breakpoint masonry
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
+  };
 
   useEffect(() => {
     if (!loading && data) {
@@ -42,14 +50,6 @@ const FindUMKM = () => {
     }
   }, [query, data]);
 
-  const regionOptions = [
-    "Jawa Barat",
-    "Jawa Tengah",
-    "Jawa Timur",
-    "Kalimantan Barat",
-    "Bengkulu",
-  ];
-
   if (error) {
     return (
       <p className="text-center text-red-600 font-poppins mt-10">
@@ -65,23 +65,17 @@ const FindUMKM = () => {
           Jelajahi Kue Tradisional dari Beberapa Daerah Pilihan!
         </h1>
       </div>
+
       <SearchBar
         icon="/assets/icons/Search.svg"
         placeholder="Cari"
         value={query}
         onChange={handleSearchChange}
       />
-      {/* <DropDown
-        label="Filter Berdasarkan Lokasi"
-        icon="/assets/icons/down.svg"
-        options={regionOptions}
-        selected={selectedRegion}
-        onSelect={handleSelectRegion}
-      /> */}
-      <div className="grid grid-cols-4 px-6">
+
+      <div className="px-6">
         {loading || !data ? (
-          <div className="col-span-4 flex justify-center items-center py-6">
-            {/* Loading spinner di atas */}
+          <div className="flex justify-center items-center py-6">
             <DotLottieReact
               src="https://lottie.host/674c6c90-9815-4c01-a8fe-a809d2373d1a/VcJBJZNT0a.lottie"
               autoplay
@@ -91,31 +85,40 @@ const FindUMKM = () => {
           </div>
         ) : (
           <>
-            <div className="col-span-4 py-6">
+            <div className="py-6">
               <h1 className="umkm-title font-baloo text-heading-1 text-center text-primary-100">
                 Daftar UMKM
               </h1>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 col-span-4">
-              {filteredData?.length > 0 ? (
-                filteredData.map((item) => (
-                  <UMKMCard
-                    key={item.id}
-                    imgPosition="bottom"
-                    image_url={item.image_url}
-                    nama={item.nama}
-                    alamat={item.alamat}
-                    no_telp={item.no_telp}
-                    paling_diminati={item.paling_diminati}
-                  />
-                ))
-              ) : (
-                <p className="col-span-4 text-center text-primary-100 font-poppins text-lg">
-                  Tidak ada UMKM yang cocok dengan pencarianmu.
-                </p>
-              )}
-            </div>
+            {/* Masonry Layout */}
+            {filteredData?.length > 0 ? (
+              <Masonry
+                breakpointCols={breakpointColumnsObj}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column"
+              >
+                {filteredData.map((item) => (
+                  <div key={item.id} className="mb-6">
+                    <UMKMCard
+                      imgPosition="bottom"
+                      image_url={item.image_url}
+                      nama={item.nama}
+                      alamat={item.alamat}
+                      no_telp={item.no_telp}
+                      paling_diminati={item.paling_diminati}
+                      animateType="fade-up"
+                      animateOffset="10"
+                      animateDuration="1000"
+                    />
+                  </div>
+                ))}
+              </Masonry>
+            ) : (
+              <p className="text-center text-primary-100 font-poppins text-lg">
+                Tidak ada UMKM yang cocok dengan pencarianmu.
+              </p>
+            )}
           </>
         )}
       </div>

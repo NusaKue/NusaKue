@@ -48,7 +48,7 @@ const OurTeam = () => {
             name={member.name}
             role={member.role}
             icon={member.icon}
-            animateType="flip-right"
+            animateType="zoom-in"
             animateOffset="100"
             animateDuration="1000"
           />

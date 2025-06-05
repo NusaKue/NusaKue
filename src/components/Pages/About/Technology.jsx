@@ -13,11 +13,6 @@ const Technology = () => {
       desc: "Digunakan sebagai lingkungan pelatihan model berbasis cloud.",
     },
     {
-      icon: "/assets/icons/technology/flask.png",
-      name: "Flask",
-      desc: "Untuk menyajikan model ML dalam bentuk REST API.",
-    },
-    {
       icon: "/assets/icons/technology/hapi.png",
       name: "Hapi JS",
       desc: "Digunakan untuk membuat REST API tambahan di sisi back-end.",

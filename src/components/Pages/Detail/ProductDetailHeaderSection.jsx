@@ -37,24 +37,27 @@ const ProductDetailHeaderSection = ({ data, error }) => {
       <div className="col-span-4 md:col-span-5 md:col-start-2 flex justify-center mb-3 items-center">
         <img
           src={data?.image_url}
-          alt="Klepon"
+          alt=""
           className="rounded-lg object-cover w-full h-full md:w-11/12 md:h-3/4"
         />
       </div>
 
       <div className="col-span-5 md:col-start-7 text-primary-100 m-auto">
-        <h2 className="text-heading-1 font-baloo font-bold mb-3">
+        <h2 className="font-baloo font-bold text-heading-4 sm:text-heading-3 md:text-heading-2 lg:text-heading-1 mb-4 md:mb-5 lg:mb-6">
           {data?.nama}
         </h2>
-        <div className="flex items-center text-sm mb-3 text-body-md-medium font-poppins">
+        <div className="flex items-center font-poppins  text-body-md-medium lg:text-body-lg-medium gap-2 mb-2 md:mb-3">
+          <img src="\assets\icons\Location.svg" alt="" className="w-5" />
           <span>Asal: {data?.asal.map((item) => item + ", ")}</span>
         </div>
-        <p className="text-sm mb-4 text-body-md-medium">{data?.deskripsi}</p>
+        <p className="font-poppins text-body-md-regular mb-4 md:mb-5 lg:mb-6">
+          {data?.deskripsi}
+        </p>
 
-        <h3 className="font-semibold text-heading-3 mb-2 font-baloo">
+        <h3 className="font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 mb-2 md:mb-3">
           Bahan-Bahan
         </h3>
-        <ul className="list-disc list-inside text-sm space-y-1 font-poppins text-body-sm-medium">
+        <ul className="list-disc list-inside space-y-1 font-poppins text-body-md-regular">
           {data?.bahan_pembuatan.map((item) => (
             <li>{item}</li>
           ))}

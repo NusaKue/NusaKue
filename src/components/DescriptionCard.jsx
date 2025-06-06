@@ -12,7 +12,9 @@ const DescriptionCard = ({ icon = null, title, desc, className }) => {
       )}
 
       <div className="mission-content ">
-        <h3 className={`${className} mission-title font-baloo text-heading-4 lg:text-heading-3 pb-2 sm:pb-3 md:pb-4 lg:pb-5`}>
+        <h3
+          className={`${className} mission-title font-baloo text-heading-5 md:text-heading-4 lg:text-heading-3 pb-2 sm:pb-3 md:pb-4 lg:pb-5`}
+        >
           {title}
         </h3>
         <p className="font-poppins text-body-md-regular lg:text-body-lg-regular">

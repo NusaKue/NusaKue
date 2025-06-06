@@ -22,7 +22,7 @@ const FindUMKM = () => {
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
-    700: 2,
+    768: 2,
     500: 1,
   };
 
@@ -61,7 +61,7 @@ const FindUMKM = () => {
   return (
     <section className="find-umkm px-6 sm:px-8 md:px-12 lg:px-24 mt-3 md:mt-4 lg:mt-16 py-8 sm:py-10 md:py-14 lg:py-16">
       <div className="umkm-header text-primary-100 lg:mx-20">
-        <h1 className="umkm-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-5 sm:pb-6 md:pb-8 lg:pb-10">
+        <h1 className="umkm-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-7 sm:pb-8 md:pb-9 lg:pb-10">
           Jelajahi Kue Tradisional dari Beberapa Daerah Pilihan!
         </h1>
       </div>
@@ -73,7 +73,7 @@ const FindUMKM = () => {
         onChange={handleSearchChange}
       />
 
-      <div className="px-6">
+      <div>
         {loading || !data ? (
           <div className="flex justify-center items-center py-6">
             <DotLottieReact
@@ -85,8 +85,8 @@ const FindUMKM = () => {
           </div>
         ) : (
           <>
-            <div className="py-6">
-              <h1 className="umkm-title font-baloo text-heading-1 text-center text-primary-100">
+            <div className="pb-7 sm:pb-8 md:pb-9 lg:pb-10">
+              <h1 className="umkm-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 text-center text-primary-100">
                 Daftar UMKM
               </h1>
             </div>

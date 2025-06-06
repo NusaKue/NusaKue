@@ -33,9 +33,12 @@ const UMKMCard = ({
 
   if (imgPosition === "bottom") {
     return (
-      <div className="card umkm-list w-full bg-white rounded-lg shadow-md flex flex-col text-primary-100" data-aos={animateType}
-      data-aos-offset={animateOffset}
-      data-aos-duration={animateDuration}>
+      <div
+        className="card umkm-list w-full bg-white rounded-lg shadow-md flex flex-col text-primary-100"
+        data-aos={animateType}
+        data-aos-offset={animateOffset}
+        data-aos-duration={animateDuration}
+      >
         {/* Skeleton dan gambar */}
         {imageLoaded ? null : <SkeletonImage />}
         <div className="overflow-hidden">{imgElement}</div>
@@ -49,7 +52,7 @@ const UMKMCard = ({
                 alt="Profil"
                 className="w-8 h-8 object-contain"
               />
-              <p className="font-poppins text-lg font-semibold">{nama}</p>
+              <p className="font-poppins text-body-md-medium">{nama}</p>
             </div>
             <div className="flex items-center gap-3 mb-1">
               <img
@@ -57,7 +60,7 @@ const UMKMCard = ({
                 alt="Lokasi"
                 className="w-5 h-5 object-contain"
               />
-              <p className="font-poppins text-md">{alamat}</p>
+              <p className="font-poppins text-body-md-regular">{alamat}</p>
             </div>
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -65,13 +68,13 @@ const UMKMCard = ({
                 alt="Whatsapp"
                 className="w-5 h-5 object-contain"
               />
-              <p className="font-poppins text-md">{no_telp}</p>
+              <p className="font-poppins text-body-md-regular">{no_telp}</p>
             </div>
           </div>
 
           <div className="">
             <div>
-              <p className="font-poppins text-lg font-semibold mb-2">
+              <p className="font-poppins text-body-md-medium mb-2">
                 Paling diminati:
               </p>
             </div>

@@ -10,22 +10,22 @@ const OurTeam = () => {
     {
       name: "Bagus Dzakiy Rahman Saputra",
       role: "Machine Learning",
-      icon: "/assets/images/kucheng.png",
+      icon: "/assets/images/teamprofile/Bagus Dzakiy Rahman Saputra.jpg",
     },
     {
       name: "Fiyanda Ma'muri",
       role: "Machine Learning",
-      icon: "/assets/images/kucheng.png",
+      icon: "/assets/images/teamprofile/Fiyanda Ma'muri.png",
     },
     {
       name: "Revaldo Relinsyah",
       role: "Back-End Developer",
-      icon: "/assets/images/kucheng.png",
+      icon: "/assets/images/teamprofile/Revaldo_Relinsyah.jpg",
     },
     {
       name: "Muhammad Irfan",
       role: "Front-End Developer",
-      icon: "/assets/images/kucheng.png",
+      icon: "/assets/images/teamprofile/Muhammad Irfan.png",
     },
     {
       name: "Sylvia Steffi",
@@ -37,9 +37,11 @@ const OurTeam = () => {
   return (
     <section className="our-team px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-16">
       <div className="team-content text-primary-100 mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-        <h2 className="team-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 text-center">
+        <h1 className="about-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-4 sm:pb-5 md:pb-6 lg:pb-7" data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-duration="1000">
           Tim Kami
-        </h2>
+        </h1>
       </div>
 
       <div className="team-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 lg:gap-24 mx-auto w-fit">

@@ -55,8 +55,8 @@ const Technology = () => {
   ];
 
   return (
-    <section className="technology bg-white px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14">
-      <div className="technology-content text-primary-100">
+    <section className="technology grid grid-cols-5 bg-white px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14">
+      <div className="technology-content text-primary-100 col-span-5">
         <h2
           className="technology-title font-baloo text-center text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10"
           data-aos="fade-up"
@@ -66,10 +66,11 @@ const Technology = () => {
           Teknologi yang Kami Gunakan
         </h2>
       </div>
-      <div className="techonolgy-content grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-12 gap-5">
+      <div className="technology-items flex flex-wrap justify-center gap-6 col-span-5">
         {technologyItems.map((item) => (
           <TechnologyItem
-            className="col-span-3"
+            key={item.name} // Don't forget to add a key to each element in the list
+            className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4" // Adjusting for 4 columns on large screens
             icon={item.icon}
             name={item.name}
             desc={item.desc}

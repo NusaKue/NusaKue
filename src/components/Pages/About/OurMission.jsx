@@ -4,9 +4,9 @@ const OurMission = () => {
   return (
     <section className="our-mission gap-4 flex flex-col bg-primary-100 px-6 sm:px-8 md:px-12 lg:px-24 py-8 sm:py-10 md:py-14 lg:py-24">
       <div className="mission-content text-white pb-4 sm:pb-5 md:pb-6 lg:pb-7">
-        <h2 className="mission-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 pb-2 sm:pb-3 md:pb-4 lg:pb-5 text-center">
+       <h1 className="about-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-1 text-center pb-4 sm:pb-5 md:pb-6 lg:pb-7">
           Misi Kami
-        </h2>
+        </h1>
         <p className="font-poppins text-body-md-regular lg:text-body-lg-regular text-center">
           Kami bertujuan untuk menjembatani teknologi dan tradisi dengan
           menciptakan platform yang mudah diakses untuk membantu melestarikan

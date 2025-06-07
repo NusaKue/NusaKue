@@ -42,7 +42,7 @@ const OurTeam = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 2.5,
+            delay:  0.9,
             duration: 0.5,
             ease: "easeOut",
           }}

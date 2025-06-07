@@ -6,13 +6,15 @@ const TechnologyItem = ({
   animateType,
   animateOffset,
   animateDuration,
+  animationDelay = "0s",
 }) => {
   return (
     <div
-      className={`${className}`}
+      className={`${className} technology-item`}
       data-aos={animateType}
       data-aos-offset={animateOffset}
       data-aos-duration={animateDuration}
+      style={{ animationDelay }}
     >
       <div className="bg-primary-20 rounded-xl p-4 min-h-full flex flex-col items-center text-center shadow-lg transition-all ease-in-out hover:scale-105">
         <img src={icon} className="mb-4 w-10 sm:w-12 md:w-14 lg:w-16" alt="" />

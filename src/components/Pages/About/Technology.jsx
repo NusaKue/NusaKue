@@ -59,24 +59,23 @@ const Technology = () => {
       <div className="technology-content text-primary-100 col-span-5">
         <h2
           className="technology-title font-baloo text-center text-heading-5 sm:text-heading-4 md:text-heading-3 lg:text-heading-2 mb-4 sm:mb-6 md:mb-8 lg:mb-10"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-duration="1000"
+          
         >
           Teknologi yang Kami Gunakan
         </h2>
       </div>
       <div className="technology-items flex flex-wrap justify-center gap-6 col-span-5">
-        {technologyItems.map((item) => (
+        {technologyItems.map((item, idx) => (
           <TechnologyItem
             key={item.name} // Don't forget to add a key to each element in the list
-            className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4" // Adjusting for 4 columns on large screens
+            className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 card-float "  // Adjusting for 4 columns on large screens
             icon={item.icon}
             name={item.name}
             desc={item.desc}
             animateType="zoom-in"
             animateOffset="100"
             animateDuration="1000"
+            animationDelay={`${idx * 0.3}s`}
           />
         ))}
       </div>

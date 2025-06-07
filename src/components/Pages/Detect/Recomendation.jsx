@@ -50,7 +50,6 @@ const Recomendation = ({ id }) => {
   }
 
   const data = result.data;
-  console.log(data);
 
   return (
     <section

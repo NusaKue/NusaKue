@@ -1,6 +1,14 @@
 import { useNavigate } from "react-router-dom";
-
-const Button = ({ text = null, className, icon, link, onClick }) => {
+import { motion, AnimatePresence } from "framer-motion";
+const Button = ({
+  text = null,
+  className,
+  icon,
+  link,
+  onClick,
+  whileTap = {scale: 0.9},
+  whileHover,
+}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,14 +20,29 @@ const Button = ({ text = null, className, icon, link, onClick }) => {
   };
 
   return (
-    <button
+    <motion.button
+      whileHover={whileHover}
+      whileTap={whileTap}
+      transition={{
+        type: "tween", // atau "spring"
+        ease: "easeOut", // untuk tween
+        duration: 0.2, // 200ms
+        // kalau pakai spring, bisa: stiffness: 600, damping: 25
+      }}
       onClick={handleClick}
-      className={`${className} font-poppins flex items-center justify-center py-2 px-4 rounded-md text-body-md-regular shadow-lg transition duration-150 ease-in-out active:scale-95 hover:shadow-md`}
       type="button"
+      className={`
+        ${className}
+        font-poppins
+        flex items-center justify-center
+        py-2 px-4 rounded-md
+        text-body-md-regular
+    
+      `}
     >
-      {text && <p className="mr-2">{text}</p>}
-      {icon && <img src={icon}  alt="" />}
-    </button>
+      {text && <span className="mr-2">{text}</span>}
+      {icon && <img src={icon} alt="" />}
+    </motion.button>
   );
 };
 

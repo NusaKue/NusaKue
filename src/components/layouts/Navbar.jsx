@@ -78,30 +78,45 @@ const Navbar = () => {
           )}
         </svg>
       </button>
-
-      <ul className="nav-links text-body-sm-regular lg:flex lg:text-body-sm-regular xl:text-body-md-regular hidden font-poppins items-center space-x-8 justify-end ">
-        {[
-          { to: "/", label: "Beranda" },
-          { to: "/Deteksi-Kue", label: "Deteksi Kue" },
-          { to: "/Cari-UMKM", label: "Cari UMKM" },
-          { to: "/Tentang-kami", label: "Tentang Kami" },
-        ].map(({ to, label }) => (
-          <li key={to} className="nav-item flex justify-center">
-            <NavLink
-              to={to}
-              className={({ isActive }) =>
-                isActive
-                  ? "scale-110 text-success-80 transition-transform ease-in"
-                  : "hover:text-success-80 transition-all ease-in"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              {label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
+      <AnimatePresence>
+        <ul className="nav-links hidden lg:flex items-center space-x-8 text-body-sm-regular xl:text-body-md-regular font-poppins justify-end">
+          {[
+            { to: "/", label: "Beranda" },
+            { to: "/Deteksi-Kue", label: "Deteksi Kue" },
+            { to: "/Cari-UMKM", label: "Cari UMKM" },
+            { to: "/Tentang-kami", label: "Tentang Kami" },
+          ].map(({ to, label }) => (
+            <li key={to} className="group">
+              <NavLink
+                to={to}
+                onClick={() => setIsOpen(false)}
+                className={({ isActive }) =>
+                  `relative inline-block
+           transition-colors duration-200
+           ${
+             isActive
+               ? "text-success-80" // warna teks saat active
+               : "text-primary-100 hover:text-success-80"
+           }
+           before:content-['']                 /* buat pseudo-element */
+           before:absolute before:left-0
+           before:bottom-[-2px]                /* 2px di bawah teks */
+           before:h-[2px]                      /* tinggi garis */
+           before:bg-success-80                /* warna garis */
+           before:transition-[width] before:duration-300
+           ${
+             isActive
+               ? "before:w-full" /* kalau active full lebar */
+               : "before:w-0 group-hover:before:w-full"
+           }`
+                }
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </AnimatePresence>
       <AnimatePresence>
         {isOpen && (
           <motion.ul
@@ -110,23 +125,37 @@ const Navbar = () => {
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="nav-links absolute top-full left-0  right-0 bg-white shadow-lg flex flex-col  font-poppins text-body-md-regular space-y-4 p-6 lg:hidden z-40"
+            className="nav-links absolute top-full right-0 bg-white shadow-lg flex flex-col items-end font-poppins text-body-md-regular space-y-4 p-6 lg:hidden z-40"
           >
+            {" "}
             {[
               { to: "/", label: "Beranda" },
               { to: "/Deteksi-Kue", label: "Deteksi Kue" },
               { to: "/Cari-UMKM", label: "Cari UMKM" },
               { to: "/Tentang-kami", label: "Tentang Kami" },
             ].map(({ to, label }) => (
-              <li key={to} className="nav-item flex justify-center">
+              <li key={to} className="group">
                 <NavLink
                   to={to}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "scale-110 text-success-80 transition-transform ease-in"
-                      : "hover:text-success-80 transition-all ease-in"
-                  }
                   onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `relative block w-full text-right
+                     transition-colors duration-200
+           ${
+             isActive
+               ? "text-success-80" // warna teks saat active
+               : "text-primary-100 hover:text-success-80"
+           }
+            before:content-[''] before:absolute
+            before:right-0 before:bottom-[-2px]
+            before:h-[2px] before:bg-success-80
+            before:transition-[width] before:duration-300+         
+         ${
+           isActive
+             ? "before:w-full before:left-0"
+             : "before:w-0 group-hover:before:w-full before:left-auto"
+         }`
+                  }
                 >
                   {label}
                 </NavLink>

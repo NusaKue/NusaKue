@@ -12,7 +12,6 @@ const PopularCakes = () => {
     null
   );
   const data = result?.data;
-  console.log(data);
 
   if (error) {
     return (

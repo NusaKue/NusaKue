@@ -1,14 +1,15 @@
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Webcam from "react-webcam";
 import Button from "../../Button";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import toast, { Toaster } from "react-hot-toast";
+
 const CameraSection = ({ setImage }) => {
   const [loading, setLoading] = useState(true);
   const [loadingPredict, setLoadingPredict] = useState(false);
   const [imgUrl, setImageUrl] = useState("");
   const [isCapture, setIsCapture] = useState(false);
   const [cameraAllowed, setCameraAllowed] = useState(true);
-  const [facingMode, setFacingMode] = useState("user"); // "user" = depan, "environment" = belakang
+  const [facingMode, setFacingMode] = useState("user");
 
   const webcamRef = useRef(null);
   const inputFileRef = useRef(null);
@@ -16,7 +17,7 @@ const CameraSection = ({ setImage }) => {
   const videoConstraints = {
     width: 596,
     height: 620,
-    facingMode: facingMode,
+    facingMode,
   };
 
   const handleOpenExplorer = () => {
@@ -24,13 +25,13 @@ const CameraSection = ({ setImage }) => {
   };
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
+    const file = event.target.files?.[0];
     if (file && file.type.startsWith("image/")) {
       const objectUrl = URL.createObjectURL(file);
       setImageUrl(objectUrl);
       setIsCapture(true);
     } else {
-      alert("Mohon pilih file gambar saja.");
+      toast.error("Mohon pilih file gambar saja.");
     }
   };
 
@@ -51,24 +52,22 @@ const CameraSection = ({ setImage }) => {
   };
 
   const handleLoading = () => {
-    console.log("Webcam sudah siap");
     setLoading(false);
   };
 
   const handleCameraError = (err) => {
     console.error("Webcam access error:", err);
     setCameraAllowed(false);
-    alert("Kamera tidak diizinkan. Silakan upload gambar secara manual.");
+    toast.error("Kamera tidak diizinkan. Silakan upload gambar secara manual.");
   };
 
   const handleDetect = async () => {
     if (!isCapture) {
-      alert("Silakan ambil atau unggah gambar dulu");
+      toast.error("Silakan ambil atau unggah gambar dulu.");
       return;
     }
 
     setLoadingPredict(true);
-
     try {
       if (imgUrl.startsWith("data:image/")) {
         setImage(imgUrl);
@@ -77,25 +76,26 @@ const CameraSection = ({ setImage }) => {
         const blob = await response.blob();
         setImage(blob);
       } else {
-        alert("Format gambar tidak dikenali.");
+        toast.error("Format gambar tidak dikenali.");
       }
     } catch (error) {
       console.error("Gagal membaca file gambar:", error);
-      alert("Gagal membaca file gambar, coba upload ulang.");
+      toast.error("Gagal membaca file gambar, coba upload ulang.");
     } finally {
       setLoadingPredict(false);
     }
   };
 
-  // Toggle kamera depan / belakang
   const toggleFacingMode = () => {
     setFacingMode((prev) => (prev === "user" ? "environment" : "user"));
-    reset(); // reset gambar saat ganti kamera
-    setLoading(true); // supaya loading spinner muncul saat switch kamera
+    reset();
+    setLoading(true);
   };
 
   return (
     <section className="grid grid-cols-4 px-4 py-8 md:grid-cols-12 h-fit grid-rows-[auto_1fr] md:pt-16">
+      <Toaster position="top-center" />
+
       <header className="col-span-12 text-center">
         <h1 className="about-title font-baloo text-heading-4 sm:text-heading-4 md:text-heading-1 text-center py-6 text-primary-100">
           Yuk, Deteksi kue tradisionalmu!
@@ -104,7 +104,7 @@ const CameraSection = ({ setImage }) => {
 
       <div className="col-span-4 md:col-start-5 flex flex-col gap-6 p-4 bg-white rounded-lg shadow-xl h-fit">
         <div className="wecam border rounded-lg bg-slate-200 relative">
-          <div className="absolute bottom-2 right-2 z-50 md:hidden">
+          <div className="absolute bottom-2 right-2 z-40 md:hidden">
             <Button
               icon="/assets/icons/camera-rotate.svg"
               onClick={toggleFacingMode}
@@ -112,6 +112,7 @@ const CameraSection = ({ setImage }) => {
               aria-label="Toggle Kamera Depan/Belakang"
             />
           </div>
+
           {loading && !loadingPredict && cameraAllowed && (
             <div className="flex justify-center items-center w-full h-full">
               <img src="/assets/icons/camera40x40.svg" alt="camera" />
@@ -129,24 +130,22 @@ const CameraSection = ({ setImage }) => {
               key={facingMode}
             />
           ) : (
-            (!cameraAllowed || isCapture) && (
-              <div className="upload-placeholder">
-                {!isCapture ? (
-                  <div className="flex flex-col">
-                    <img src="/assets/icons/camera-slash.svg" alt="camera" />
-                    <p className="text-center text-gray-500">
-                      Kamera tidak aktif, silakan upload gambar.
-                    </p>
-                  </div>
-                ) : (
-                  <img
-                    src={imgUrl}
-                    alt="Preview"
-                    className="rounded-lg w-full"
-                  />
-                )}
-              </div>
-            )
+            <div className="upload-placeholder">
+              {!isCapture ? (
+                <div className="flex flex-col">
+                  <img src="/assets/icons/camera-slash.svg" alt="camera" />
+                  <p className="text-center text-gray-500">
+                    Kamera tidak aktif, silakan upload gambar.
+                  </p>
+                </div>
+              ) : (
+                <img
+                  src={imgUrl}
+                  alt="Preview"
+                  className="rounded-lg w-full"
+                />
+              )}
+            </div>
           )}
         </div>
 
@@ -166,7 +165,6 @@ const CameraSection = ({ setImage }) => {
                 ref={inputFileRef}
                 onChange={handleFileChange}
               />
-
               <Button
                 text="Ambil Gambar"
                 icon="/assets/icons/camera.svg"
@@ -183,6 +181,7 @@ const CameraSection = ({ setImage }) => {
             />
           )}
         </div>
+
         <div className="button-detection flex">
           <Button
             text="Deteksi Sekarang"

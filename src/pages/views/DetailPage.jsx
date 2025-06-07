@@ -1,10 +1,8 @@
-import { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useApi } from "../../hooks/useApi";
 import ProductDetailHeaderSection from "../../components/Pages/Detail/ProductDetailHeaderSection";
 import PreparationAndCulturalSignificanceSection from "../../components/Pages/Detail/PreparationAndCulturalSignificanceSection";
 import UmkmSellerListSection from "../../components/Pages/Detail/UmkmSellerListSection";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 function DetailPage() {
   const { id } = useParams();
@@ -17,7 +15,6 @@ function DetailPage() {
     !!id
   );
   const data = result?.data;
-  console.log(data?.id);
 
   return (
     <>

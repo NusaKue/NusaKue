@@ -93,7 +93,6 @@ export function useApi(
       } catch (err) {
         if (err.name === "AbortError") {
           // Request dibatalkan, jangan update state
-          console.log("Fetch aborted");
         } else {
           setError(err);
           setResult(null);

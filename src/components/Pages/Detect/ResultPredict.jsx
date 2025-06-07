@@ -20,7 +20,6 @@ const ResultPredict = ({ imageData, setIdData, setLoading }) => {
     !!imageData
   );
 
-  console.log("ini loading", loading);
   useEffect(() => {
     if (imageData) {
       setIsIdDataSent(false); // Reset status pengiriman saat imageData berubah

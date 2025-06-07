@@ -54,7 +54,7 @@ const ResultPredict = ({ imageData, setIdData, setLoading }) => {
 
   if (error) {
     return (
-      <section className="result-predict grid grid-cols-12 bg-primary-20 p-4 rounded-lg">
+      <section className="result-predict grid md:grid-cols-12 bg-primary-20 p-4 rounded-lg">
         <div className="card  bg-white col-span-4 col-start-5 flex rounded-lg shadow-md">
           <div className="card-body p-4 flex flex-col justify-center">
             <div className="flex items-center space-x-3 mb-1">

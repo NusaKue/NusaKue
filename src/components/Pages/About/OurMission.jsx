@@ -16,13 +16,13 @@ const OurMission = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5 items-start">
         <DescriptionCard
-          icon="/public/assets/icons/love.svg"
+          icon="/assets/icons/love.svg"
           title="Melestarikan Budaya"
           desc="Dokumentasi dan berbagi pengetahuan tentang kue-kue tradisional Indonesia untuk generasi mendatang"
           className={"text-white "}
         />
         <DescriptionCard
-          icon="/public/assets/icons/together.svg"
+          icon="/assets/icons/together.svg"
           title="Memberdayakan UMKM"
           desc="Mendukung UMKM dengan menghubungkan mereka, dengan pelanggan melalui teknologi"
           className={"text-white"}

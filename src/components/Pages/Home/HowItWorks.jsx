@@ -13,7 +13,7 @@ const HowItWorks = () => {
 
       <div className="grid col-span-3 gap-10 sm:col-span-3 md:grid-cols-1 lg:grid-cols-3 md:col-start-1 md:justify-items-center">
         <StepCard
-          icon="/public/assets/icons/camera40x40.svg"
+          icon="/assets/icons/camera40x40.svg"
           title="Ambil Gambar"
           desc="Ambil atau unggah gambar dari kue tradisional apapun"
           animateType="fade-up"
@@ -21,7 +21,7 @@ const HowItWorks = () => {
           animateDuration="1000"
         />
         <StepCard
-          icon="/public/assets/icons/detect40x40.svg"
+          icon="/assets/icons/detect40x40.svg"
           title="Deteksi AI"
           desc="Kami akan mengidentifikasi kue dan memberikan informasi secara rinci"
           animateType="fade-up"
@@ -29,7 +29,7 @@ const HowItWorks = () => {
           animateDuration="1000"
         />
         <StepCard
-          icon="/public/assets/icons/market40x40.svg"
+          icon="/assets/icons/market40x40.svg"
           title="Cari UMKM"
           desc="Temukan penjual UMKM lokal di dekat Anda"
           animateType="fade-up"

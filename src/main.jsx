@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import ClickSpark from "./components/ReactBits/ClickSpark.jsx";
+import ClickSpark from "./components/Animation/ClickSpark.jsx";
 import "../public/css/index.css";
 import App from "./App.jsx";
 

@@ -41,7 +41,7 @@ const Navbar = () => {
     <nav className="px-6 md:px-24 py-4 fixed top-0 left-0 right-0 z-40 grid grid-cols-2  text-primary-100 bg-white ">
       <div className="text-heading-4 sm:text-heading-2 logo font-baloo  flex items-center gap-2">
         <img
-          src="/public/assets/icons/logo.svg"
+          src="/assets/icons/logo.svg"
           alt=""
           className="h-8 w-auto sm:h-10"
         />

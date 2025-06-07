@@ -1,7 +1,7 @@
 import { NavLink, } from "react-router-dom";
 
-import Github from "/public/assets/icons/github.svg";
-import Linkedin from "/public/assets/icons/linkedin.svg";
+import Github from "/assets/icons/github.svg";
+import Linkedin from "/assets/icons/linkedin.svg";
 const Footer = () => {
     return (
          <footer className="footer px-6 bg-primary-100 text-white md:px-24">

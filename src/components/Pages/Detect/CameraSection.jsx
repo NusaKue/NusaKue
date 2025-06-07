@@ -95,15 +95,15 @@ const CameraSection = ({ setImage }) => {
   };
 
   return (
-    <section className="grid grid-cols-4 px-4 pb-4 pt-4 md:grid-cols-12 min-h-screen grid-rows-[auto_1fr] md:pt-16">
+    <section className="grid grid-cols-4 px-4 py-8 md:grid-cols-12 h-fit grid-rows-[auto_1fr] md:pt-16">
       <header className="col-span-12 text-center">
-        <h1 className="about-title font-baloo text-heading-5 sm:text-heading-4 md:text-heading-1 text-center py-4 text-primary-100">
+        <h1 className="about-title font-baloo text-heading-4 sm:text-heading-4 md:text-heading-1 text-center py-6 text-primary-100">
           Yuk, Deteksi kue tradisionalmu!
         </h1>
       </header>
 
-      <div className="col-span-4 md:col-start-5 flex flex-col gap-6 p-4 bg-white rounded-lg shadow-xl">
-        <div className="wecam border h-full rounded-lg bg-slate-200 relative">
+      <div className="col-span-4 md:col-start-5 flex flex-col gap-6 p-4 bg-white rounded-lg shadow-xl h-fit">
+        <div className="wecam border rounded-lg bg-slate-200 relative">
           <div className="absolute bottom-2 right-2 z-50 md:hidden">
             <Button
               icon="/assets/icons/camera-rotate.svg"
@@ -120,8 +120,6 @@ const CameraSection = ({ setImage }) => {
 
           {!isCapture && cameraAllowed ? (
             <Webcam
-              height={720}
-              width={1280}
               ref={webcamRef}
               screenshotFormat="image/jpeg"
               videoConstraints={videoConstraints}

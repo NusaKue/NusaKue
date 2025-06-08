@@ -2,6 +2,7 @@ const TeamProfile = ({
   name,
   icon,
   role,
+  linkedin,
   animateType,
   animateOffset,
   animateDuration,
@@ -29,6 +30,16 @@ const TeamProfile = ({
           <p className="font-poppins text-body-md-regular text-primary-100">
             {role}
           </p>
+          <div className="mt-2">
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <img src="/assets/icons/linkedin.svg" alt="linkedin icon" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -49,6 +60,16 @@ const TeamProfile = ({
             <div className="flip-back w-full h-full rounded-full flex flex-col items-center justify-center bg-primary-100 text-white p-2 text-center">
               <p className="font-poppins text-body-xl-medium mb-1">{name}</p>
               <p className="font-poppins text-body-lg-regular">{role}</p>
+              <div className="mt-2">
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                >
+                  <img src="/assets/icons/linkedin.svg" alt="linkedin icon" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -45,7 +45,7 @@ const Navbar = () => {
           alt=""
           className="h-8 w-auto sm:h-10"
         />
-        <h1 className="text-center pt-2"><a href="/">NusaKue</a></h1>
+        <h1 className="text-center pt-2">NusaKue</h1>
       </div>
 
       <button

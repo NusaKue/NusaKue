@@ -17,16 +17,21 @@ const Footer = () => {
             <h1 className="font-poppins text-body-lg-medium">Ikuti Kami</h1>
             <ul className="social-icons flex gap-1">
               <li>
-                <a href="https://github.com/NusaKue" target="_blank" className="social-icon">
+                <NavLink className="social-icon">
                   <img src={Github} alt="github icon" />
-                </a>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="social-icon">
+                  <img src={Linkedin} alt="linkedin icon" />
+                </NavLink>
               </li>
             </ul>
           </div>
           <div className="font-poppins footer-section flex flex-col gap-6 ">
             <h1 className="text-body-lg-medium">Hubungi Kami</h1>
             <div>
-              <p className="text-body-md-regular">Email: NusaKue@gmail.com</p>
+              <p className="text-body-md-regular">Email: hello@nusakue.com</p>
               <p className="text-body-md-regular">
                 Nomor Handphone: +62 899-9999-9999
               </p>

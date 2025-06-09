@@ -98,7 +98,7 @@ const FindUMKM = () => {
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column"
               >
-                {filteredData.map((item) => (
+                {filteredData?.map((item) => (
                   <div key={item.id} className="mb-6">
                     <UMKMCard
                       imgPosition="bottom"

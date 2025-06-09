@@ -38,7 +38,7 @@ const PreparationAndCulturalSignificanceSection = ({
           </div>
         </section>
 
-        <div className="loading-overlay fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+        <div className="loading-overlay fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-20">
           <DotLottieReact
             src="https://lottie.host/674c6c90-9815-4c01-a8fe-a809d2373d1a/VcJBJZNT0a.lottie"
             autoplay

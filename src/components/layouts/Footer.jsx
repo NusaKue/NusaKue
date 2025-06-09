@@ -17,14 +17,9 @@ const Footer = () => {
             <h1 className="font-poppins text-body-lg-medium">Ikuti Kami</h1>
             <ul className="social-icons flex gap-1">
               <li>
-                <NavLink className="social-icon">
+                <a href="https://github.com/NusaKue" className="social-icon" target="_blank">
                   <img src={Github} alt="github icon" />
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className="social-icon">
-                  <img src={Linkedin} alt="linkedin icon" />
-                </NavLink>
+                </a>
               </li>
             </ul>
           </div>

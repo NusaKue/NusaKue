@@ -187,7 +187,7 @@ const CameraSection = ({ setImage }) => {
             text="Deteksi Sekarang"
             icon="/assets/icons/detect.svg"
             onClick={handleDetect}
-            disabled={!isCapture || loadingPredict}
+            disabled={!isCapture || loadingPredict || !imgUrl}
             className="bg-primary-100 text-white border border-primary-100 w-full"
           />
         </div>

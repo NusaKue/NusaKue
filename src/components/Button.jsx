@@ -6,8 +6,9 @@ const Button = ({
   icon,
   link,
   onClick,
-  whileTap = {scale: 0.9},
+  whileTap = { scale: 0.9 },
   whileHover,
+  disabled = false,
 }) => {
   const navigate = useNavigate();
 
@@ -21,6 +22,7 @@ const Button = ({
 
   return (
     <motion.button
+      disabled={disabled}
       whileHover={whileHover}
       whileTap={whileTap}
       transition={{

@@ -17,7 +17,8 @@ const FindUMKM = () => {
   const data = result?.data;
   const [filteredData, setFilteredData] = useState(data);
   const [query, setQuery] = useState("");
-
+  console.log(filteredData);
+  
   // Konfigurasi breakpoint masonry
   const breakpointColumnsObj = {
     default: 4,
@@ -99,6 +100,7 @@ const FindUMKM = () => {
                 columnClassName="my-masonry-grid_column"
               >
                 {filteredData?.map((item) => (
+                  
                   <div key={item.id} className="mb-6">
                     <UMKMCard
                       imgPosition="bottom"

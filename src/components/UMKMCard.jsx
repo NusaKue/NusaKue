@@ -79,7 +79,7 @@ const UMKMCard = ({
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              {paling_diminati.map((item, index) => (
+              {paling_diminati?.map((item, index) => (
                 <MostPopularCake key={index} text={item} />
               ))}
             </div>
@@ -127,7 +127,7 @@ const UMKMCard = ({
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            {paling_diminati.map((item, index) => (
+            {paling_diminati?.map((item, index) => (
               <MostPopularCake key={index} text={item} />
             ))}
           </div>

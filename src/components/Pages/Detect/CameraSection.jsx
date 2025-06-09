@@ -182,13 +182,13 @@ const CameraSection = ({ setImage }) => {
           )}
         </div>
 
-        <div className="button-detection flex">
+        <div className={`button-detection flex ${!isCapture ? 'hidden' : ''}`}>
           <Button
             text="Deteksi Sekarang"
             icon="/assets/icons/detect.svg"
             onClick={handleDetect}
             disabled={!isCapture || loadingPredict || !imgUrl}
-            className="bg-primary-100 text-white border border-primary-100 w-full"
+            className={`bg-primary-100 text-white border border-primary-100 w-full`}
           />
         </div>
       </div>

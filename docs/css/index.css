@@ -56,3 +56,8 @@
 .card-float {
   animation: float 3s ease-in-out infinite;
 }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

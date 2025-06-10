@@ -5,6 +5,7 @@ const TeamProfile = ({
   animateType,
   animateOffset,
   animateDuration,
+  linkedin,
 }) => {
   return (
     <div
@@ -49,6 +50,16 @@ const TeamProfile = ({
             <div className="flip-back w-full h-full rounded-full flex flex-col items-center justify-center bg-primary-100 text-white p-2 text-center">
               <p className="font-poppins text-body-xl-medium mb-1">{name}</p>
               <p className="font-poppins text-body-lg-regular">{role}</p>
+              <p className="font-poppins text-body-lg-regular mt-2">
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-100"
+                >
+                  <img src="/assets/icons/linkedin.svg" alt="" />
+                </a>
+              </p>
             </div>
           </div>
         </div>

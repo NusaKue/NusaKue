@@ -93,7 +93,7 @@ const CameraSection = ({ setImage }) => {
   };
 
   return (
-    <section className="grid grid-cols-4 min-h-screen px-4 py-8 md:grid-cols-12 h-fit grid-rows-[auto_1fr] md:pt-16">
+    <section className="grid grid-cols-4 min-h-fit px-4 py-8 md:grid-cols-12 h-fit grid-rows-[auto_1fr] md:pt-16">
       <Toaster position="top-center" />
 
       <header className="col-span-12 text-center">

@@ -66,7 +66,7 @@ const Recomendation = ({ id }) => {
       </div>
 
       <div
-        className={`flex flex-wrap md:flex-nowrap ${
+        className={`flex flex-wrap pb-6 md:flex-nowrap ${
           data.length < 3 ? "justify-center md:col-span-5" : "md:col-span-5"
         } gap-4 md:gap-10 max-w-full mx-auto`}
       >
